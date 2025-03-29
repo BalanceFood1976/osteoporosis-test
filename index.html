@@ -50,13 +50,17 @@
     .line:nth-of-type(3) { animation-delay: 0.6s; }
 
     label {
-      display: block;
-      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
       font-size: 16px;
-      background: #fff;
-      padding: 10px;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #4CAF50;
     }
 
     button {
@@ -89,7 +93,7 @@
 
   <h2>🦴 골다공증 자가 테스트</h2>
   <p class="line">지금 나의 뼈 건강 상태, 간단한 문항으로 빠르게 체크해보세요.</p>
-  
+ 
 
   <form id="testForm">
     <label><input type="checkbox" name="q1" /> 최근 키가 줄어든 느낌이 든다</label>
@@ -103,7 +107,7 @@
     <label><input type="checkbox" name="q9" /> 최근 체중이 많이 줄었다</label>
     <label><input type="checkbox" name="q10" /> 50세 이상이며 운동량이 부족하다</label>
 
-    <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
+     <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
 
     <button type="button" onclick="checkResult()">결과 보기</button>
   </form>
