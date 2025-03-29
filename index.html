@@ -4,30 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>골다공증 자가 테스트</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
       padding: 30px 20px;
-      max-width: 600px;
+      max-width: 640px;
       margin: auto;
       line-height: 1.7;
+      background-color: #f9f9f9;
+      transition: opacity 0.6s ease-out;
     }
+
     h2 {
       font-size: 22px;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      text-align: center;
     }
+
     p {
       font-size: 16px;
+      text-align: center;
     }
+
     label {
       display: block;
       margin-bottom: 12px;
       font-size: 16px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
+
     button {
       margin-top: 25px;
-      padding: 12px 24px;
+      padding: 14px 24px;
       font-size: 16px;
       background-color: #4CAF50;
       color: white;
@@ -36,27 +48,39 @@
       cursor: pointer;
       width: 100%;
       max-width: 300px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    .fade-out {
+      opacity: 0;
     }
   </style>
 </head>
-
 <body>
 
-  <h2>골다공증 위험도 자가 체크</h2>
+  <h2>🦴 골다공증 자가 테스트</h2>
   <p>해당되는 항목을 모두 체크해 주세요.</p>
 
   <form id="testForm">
-    <label><input type="checkbox" name="q1"> 최근 키가 줄어든 느낌이 든다</label>
-    <label><input type="checkbox" name="q2"> 허리나 등이 자주 아프거나 뻐근하다</label>
-    <label><input type="checkbox" name="q3"> 구부정한 자세가 자주 나타난다</label>
-    <label><input type="checkbox" name="q4"> 사소한 충격에도 골절이 생긴 적 있다</label>
-    <label><input type="checkbox" name="q5"> 칼슘/비타민D를 잘 챙겨먹지 않는다</label>
-    <label><input type="checkbox" name="q6"> 유제품을 거의 먹지 않는다</label>
-    <label><input type="checkbox" name="q7"> 햇볕 쬐는 시간이 부족하다</label>
-    <label><input type="checkbox" name="q8"> 가족 중 골다공증 진단받은 사람이 있다</label>
-    <label><input type="checkbox" name="q9"> 최근 체중이 많이 줄었다</label>
-    <label><input type="checkbox" name="q10"> 50세 이상이며 운동량이 부족하다</label>
-    <button type="button" onclick="checkResult()">결과 확인</button>
+    <label><input type="checkbox" name="q1" /> 최근 키가 줄어든 느낌이 든다</label>
+    <label><input type="checkbox" name="q2" /> 허리나 등이 자주 아프거나 뻐근하다</label>
+    <label><input type="checkbox" name="q3" /> 구부정한 자세가 자주 나타난다</label>
+    <label><input type="checkbox" name="q4" /> 사소한 충격에도 골절이 생긴 적 있다</label>
+    <label><input type="checkbox" name="q5" /> 칼슘/비타민D를 잘 챙겨먹지 않는다</label>
+    <label><input type="checkbox" name="q6" /> 유제품을 거의 먹지 않는다</label>
+    <label><input type="checkbox" name="q7" /> 햇볕 쬐는 시간이 부족하다</label>
+    <label><input type="checkbox" name="q8" /> 가족 중 골다공증 진단받은 사람이 있다</label>
+    <label><input type="checkbox" name="q9" /> 최근 체중이 많이 줄었다</label>
+    <label><input type="checkbox" name="q10" /> 50세 이상이며 운동량이 부족하다</label>
+
+    <button type="button" onclick="checkResult()">결과 보기</button>
   </form>
 
   <script>
@@ -67,15 +91,22 @@
         if (box.checked) count++;
       });
 
+      let nextPage = "";
       if (count <= 3) {
-        window.location.href = "result-low.html";
+        nextPage = "result-low.html";
       } else if (count <= 5) {
-        window.location.href = "result-mid.html";
+        nextPage = "result-mid.html";
       } else if (count <= 7) {
-        window.location.href = "result-high.html";
+        nextPage = "result-high.html";
       } else {
-        window.location.href = "result-veryhigh.html";
+        nextPage = "result-veryhigh.html";
       }
+
+      // 디졸브 효과 적용 후 페이지 이동
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = nextPage;
+      }, 600);
     }
   </script>
 
