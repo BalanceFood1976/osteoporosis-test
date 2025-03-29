@@ -17,6 +17,13 @@
       }
     }
 
+    @keyframes lineFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     body {
       font-family: 'Noto Sans KR', sans-serif;
       padding: 30px 20px;
@@ -30,14 +37,17 @@
 
     h2 {
       font-size: 22px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       text-align: center;
     }
 
-    p {
-      font-size: 16px;
-      text-align: center;
+    .line {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: lineFade 0.6s ease-out forwards;
     }
+    .line:nth-of-type(2) { animation-delay: 0.2s; }
+    .line:nth-of-type(3) { animation-delay: 0.6s; }
 
     label {
       display: block;
@@ -78,7 +88,8 @@
 <body>
 
   <h2>🦴 골다공증 자가 테스트</h2>
-  <p>해당되는 항목을 모두 체크해 주세요.</p>
+  <p class="line">지금 나의 뼈 건강 상태, 간단한 문항으로 빠르게 체크해보세요.</p>
+  <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
 
   <form id="testForm">
     <label><input type="checkbox" name="q1" /> 최근 키가 줄어든 느낌이 든다</label>
