@@ -7,21 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <style>
     @keyframes slideFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes lineFade {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     body {
@@ -72,11 +63,9 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      width: 100%;
+      width: auto;
       max-width: 300px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      display: inline-block;
       transition: background 0.3s;
     }
 
@@ -93,7 +82,6 @@
 
   <h2>🦴 골다공증 자가 테스트</h2>
   <p class="line">지금 나의 뼈 건강 상태, 간단한 문항으로 빠르게 체크해보세요.</p>
- 
 
   <form id="testForm">
     <label><input type="checkbox" name="q1" /> 최근 키가 줄어든 느낌이 든다</label>
@@ -107,9 +95,11 @@
     <label><input type="checkbox" name="q9" /> 최근 체중이 많이 줄었다</label>
     <label><input type="checkbox" name="q10" /> 50세 이상이며 운동량이 부족하다</label>
 
-     <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
+    <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
 
-    <button type="button" onclick="checkResult()">결과 보기</button>
+    <div style="text-align: left;">
+      <button type="button" onclick="checkResult()">결과 보기</button>
+    </div>
   </form>
 
   <script>
