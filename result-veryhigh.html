@@ -2,58 +2,85 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>골다공증 결과 - 매우 높은 위험</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <style>
     body {
+      background-color: #ffebee;
       font-family: 'Noto Sans KR', sans-serif;
       padding: 30px 20px;
       max-width: 640px;
-      margin: auto;
-      line-height: 1.8;
-      text-align: center;
-      background-color: #fef2f2;
-    }
-    .result {
-      background: #ffe5e5;
-      border-left: 6px solid #d32f2f;
-      padding: 24px;
-      border-radius: 10px;
+      margin: 0 auto;
       text-align: left;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .result h2 {
-      margin-top: 0;
-      color: #c62828;
+    .result-box {
+      border-left: 6px solid #d32f2f;
+      padding-left: 16px;
+      margin-bottom: 30px;
     }
-    .btn {
-      margin-top: 30px;
-      padding: 12px 24px;
-      background: #d32f2f;
+    .result-box h2, .result-box p, button, span {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .result-box h2 {
+      color: #d32f2f;
+      font-size: 22px;
+      margin-bottom: 10px;
+      animation-delay: 0.3s;
+    }
+    .result-box p {
+      font-size: 16px;
+      line-height: 1.6;
+      animation-delay: 0.6s;
+    }
+    button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #d32f2f;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-      max-width: 300px;
-      transition: background 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      animation-delay: 0.9s;
     }
-    .btn:hover {
-      background: #b71c1c;
+    button:hover {
+      background-color: #b71c1c;
+    }
+    button:active {
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+    span {
+      animation-delay: 1.2s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <h2>🦴 골다공증 자가 진단 결과</h2>
-  <div class="result">
+  <div class="result-box">
     <h2>❗ 매우 높은 위험 (8개 이상 체크)</h2>
-    <p><strong>골다공증 진행 가능성이 매우 높습니다.</strong><br>
-    가까운 병원을 방문하여 <strong>정밀 검진</strong>을 받는 것을 권장합니다.</p>
+    <p>
+      골다공증 진행 가능성이 매우 높습니다.<br>
+      가까운 병원을 방문하여 <strong>정밀 검진</strong>을 받는 것을 권장합니다.
+    </p>
     <p>👉 뼈 건강을 위한 식이요법, 약물 치료, 생활 습관 개선이 필요합니다.</p>
   </div>
-  <button class="btn" onclick="window.location.href='index.html'">🔁 다시 테스트하기</button>
+
+  <button onclick="window.location.href='index.html'">🔁 다시 테스트하기</button><br>
+  <span style="color: #8cb3be;"><i><a style="color: #8cb3be;" href="https://balancefood1976.tistory.com/">
+    <span style="font-family: 'Noto Sans Demilight', 'Noto Sans KR';">▶ 블로그 돌아가기</span></a></i></span>
 </body>
 </html>
