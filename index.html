@@ -5,70 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>골다공증 자가 테스트 해보기</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-  <style>
+   <style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
       padding: 30px 20px;
       max-width: 640px;
-      margin: auto;
-      line-height: 1.7;
-      background-color: #f9f9f9;
+      margin: 0 auto;
+      text-align: left;
     }
-
-    h2, .line, label, button {
+    h1, p, label, button {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease forwards;
     }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      text-align: left;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
       animation-delay: 0.2s;
     }
-
-    .line:nth-of-type(1) { animation-delay: 0.4s; }
-    .line:nth-of-type(2) { animation-delay: 1.6s; }
-
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      animation-delay: 0.4s;
+    }
     label {
-      display: flex;
-      align-items: center;
-      font-size: 16px;
+      display: block;
       margin-bottom: 12px;
-      gap: 8px;
-    }
-
-    input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: #4CAF50;
-    }
-
-    button {
-      margin-top: 25px;
-      padding: 14px 24px;
       font-size: 16px;
+    }
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      width: 100%;
-      max-width: 300px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      transition: background 0.3s;
-      animation-delay: 1.8s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      animation-delay: 1.4s;
     }
-
     button:hover {
       background-color: #388e3c;
     }
-
-    .fade-out {
-      opacity: 0;
+    button:active {
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
     }
 
     @keyframes fadeInUp {
