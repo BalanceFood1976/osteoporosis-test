@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>골다공증 자가 테스트 해보기</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-   <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>골다공증 자가 테스트 해보기</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
       padding: 30px 20px;
@@ -75,32 +76,31 @@
     label:nth-of-type(8) { animation-delay: 1.3s; }
     label:nth-of-type(9) { animation-delay: 1.4s; }
     label:nth-of-type(10) { animation-delay: 1.5s; }
-  </style>
+  
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+    }
+    </style>
 </head>
-<body>
-
-  <h2>🦴 골다공증 자가 테스트</h2>
-  <p class="line">지금 나의 뼈 건강 상태, 간단한 문항으로 빠르게 체크해보세요.</p>
- 
-
-  <form id="testForm">
-    <label><input type="checkbox" name="q1" /> 최근 키가 줄어든 느낌이 든다</label>
-    <label><input type="checkbox" name="q2" /> 허리나 등이 자주 아프거나 뻐근하다</label>
-    <label><input type="checkbox" name="q3" /> 구부정한 자세가 자주 나타난다</label>
-    <label><input type="checkbox" name="q4" /> 사소한 충격에도 골절이 생긴 적 있다</label>
-    <label><input type="checkbox" name="q5" /> 칼슘/비타민D를 잘 챙겨먹지 않는다</label>
-    <label><input type="checkbox" name="q6" /> 유제품을 거의 먹지 않는다</label>
-    <label><input type="checkbox" name="q7" /> 햇볕 쬐는 시간이 부족하다</label>
-    <label><input type="checkbox" name="q8" /> 가족 중 골다공증 진단받은 사람이 있다</label>
-    <label><input type="checkbox" name="q9" /> 최근 체중이 많이 줄었다</label>
-    <label><input type="checkbox" name="q10" /> 50세 이상이며 운동량이 부족하다</label>
-
-     <p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
-
-    <button type="button" onclick="checkResult()">결과 확인하기</button>
-  </form>
-
-  <script>
+<body class="fade-in">
+<h2>🦴 골다공증 자가 테스트</h2>
+<p class="line">지금 나의 뼈 건강 상태, 간단한 문항으로 빠르게 체크해보세요.</p>
+<form id="testForm">
+<label><input name="q1" type="checkbox"/> 최근 키가 줄어든 느낌이 든다</label>
+<label><input name="q2" type="checkbox"/> 허리나 등이 자주 아프거나 뻐근하다</label>
+<label><input name="q3" type="checkbox"/> 구부정한 자세가 자주 나타난다</label>
+<label><input name="q4" type="checkbox"/> 사소한 충격에도 골절이 생긴 적 있다</label>
+<label><input name="q5" type="checkbox"/> 칼슘/비타민D를 잘 챙겨먹지 않는다</label>
+<label><input name="q6" type="checkbox"/> 유제품을 거의 먹지 않는다</label>
+<label><input name="q7" type="checkbox"/> 햇볕 쬐는 시간이 부족하다</label>
+<label><input name="q8" type="checkbox"/> 가족 중 골다공증 진단받은 사람이 있다</label>
+<label><input name="q9" type="checkbox"/> 최근 체중이 많이 줄었다</label>
+<label><input name="q10" type="checkbox"/> 50세 이상이며 운동량이 부족하다</label>
+<p class="line">체크한 개수에 따라 골다공증 위험 단계를 확인할 수 있어요.</p>
+<button onclick="checkResult()" type="button">결과 확인하기</button>
+</form>
+<script>
     function checkResult() {
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
       let count = 0;
@@ -125,6 +125,5 @@
       }, 600);
     }
   </script>
-
 </body>
 </html>
